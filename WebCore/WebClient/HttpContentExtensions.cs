@@ -6,7 +6,15 @@ namespace WebCore.WebClient
 {
     public static class HttpContentExtensions
     {
-        public static async Task<T> ReadAsAsync<T>(this HttpContent content) =>
-            await JsonSerializer.DeserializeAsync<T>(await content.ReadAsStreamAsync());
+        private static readonly JsonSerializerOptions Options = new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+
+        public static async Task<T> ReadAsAsync<T>(this HttpContent content)
+        {
+            return await JsonSerializer.DeserializeAsync<T>(
+                await content.ReadAsStreamAsync(), Options);
+        }
     }
 }

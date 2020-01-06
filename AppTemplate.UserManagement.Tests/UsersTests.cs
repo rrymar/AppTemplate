@@ -21,6 +21,7 @@ namespace AppTemplate.UserManagement.Tests
         {
             var actual = client.Get<List<User>>(request);
             actual.Should().NotBeNull();
+            actual.ForEach(a => a.Summary.Should().NotBeNullOrWhiteSpace());
         }
     }
 }
