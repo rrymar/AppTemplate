@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AppTemplate.Database;
+using AppTemplate.UserManagement.Authentication;
+using Microsoft.Extensions.DependencyInjection;
+using WebCore.DependencyInjection;
 
 namespace AppTemplate.UserManagement
 {
-    public class UserManagementModule
+    public class UserManagementModule : DiModule
     {
-        //public static void Main(string[] args)
-        //{
-        //    //hack to get it working with Microsoft.NET.Sdk.Web
-        //}
+        public override void Register(IServiceCollection services)
+        {
+            services.AddScoped<ICurrentUserLocator, CurrentUserLocator>();
+        }
     }
 }

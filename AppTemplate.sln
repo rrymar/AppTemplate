@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsCore", "TestsCore\Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.UserManagement.Tests", "AppTemplate.UserManagement.Tests\AppTemplate.UserManagement.Tests.csproj", "{F5FC2151-4195-4183-A260-D26CEE663A5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.Database", "AppTemplate.Database\AppTemplate.Database.csproj", "{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.Database.Migrations", "AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj", "{06D85F55-8B3E-4393-AC59-10286D5FE00F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{F5FC2151-4195-4183-A260-D26CEE663A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5FC2151-4195-4183-A260-D26CEE663A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5FC2151-4195-4183-A260-D26CEE663A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

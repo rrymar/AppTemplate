@@ -9,10 +9,13 @@ namespace AppTemplate.UserManagement.Tests
     {
         private readonly RestClient client;
 
+        private readonly TestApplicationFactory factory;
+
         private readonly RestRequest request = "weatherforecast".ToRestRequest();
 
         public UsersTests(TestApplicationFactory factory)
-        {
+        { 
+            this.factory = factory;
             client = new RestClient(factory.CreateTestClient());
         }
         

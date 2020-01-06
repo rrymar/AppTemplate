@@ -1,10 +1,13 @@
 using AppTemplate.UserManagement;
+using AppTemplate.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using WebCore.DependencyInjection;
 
 namespace AppTemplate.Web
 {
@@ -19,8 +22,17 @@ namespace AppTemplate.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("Database");
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(connectionString,
+                    x => x.MigrationsAssembly("AppTemplate.Database.Migrations"));
+            });
+
             services.AddControllers()
                .AddApplicationPart(typeof(UserManagementModule).Assembly);
+
+            services.RegisterModule<UserManagementModule>();
 
             services.AddSpaStaticFiles(configuration =>
             {
