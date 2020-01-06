@@ -22,7 +22,7 @@ namespace AppTemplate.UserManagement.Tests
         [Fact]
         public void ItReturnsUsers()
         {
-            var actual = client.Get<List<User>>(request);
+            var actual = client.Get<List<UserModel>>(request);
             actual.Should().NotBeNull();
             actual.ForEach(a => a.Summary.Should().NotBeNullOrWhiteSpace());
         }
