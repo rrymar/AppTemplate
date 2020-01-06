@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -95,7 +97,9 @@ namespace WebCore.WebClient
         {
             if (!response.IsSuccessStatusCode)
             {
-                var error = ReadContentAsync<ErrorResult>(response).Result;
+                var error = response.StatusCode == HttpStatusCode.NotFound
+                    ? new ErrorResult("404")
+                    : ReadContentAsync<ErrorResult>(response).Result;
                 throw new ErrorResponseException(error, response.StatusCode);
             }
         }

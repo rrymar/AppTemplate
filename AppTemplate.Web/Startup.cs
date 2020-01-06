@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebCore.DependencyInjection;
+using System;
 
 namespace AppTemplate.Web
 {
@@ -23,10 +24,7 @@ namespace AppTemplate.Web
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("Database");
-            services.AddDbContext<DataContext>(options =>
-            {
-                options.UseSqlServer(connectionString);
-            });
+            services.AddDbContext<DataContext>(o => o.UseSqlServer(connectionString));
 
             services.AddControllers()
                .AddApplicationPart(typeof(UserManagementModule).Assembly);
@@ -40,6 +38,11 @@ namespace AppTemplate.Web
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            ConfigureApp(app, env);
+        }
+
+        public static void ConfigureApp(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();

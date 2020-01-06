@@ -19,6 +19,11 @@ namespace WebCore.WebClient
         {
         }
 
+        public ErrorResult(string error)
+        {
+            Errors = new[] { error };
+        }
+
         public override string ToString()
         {
             return string.Join(Environment.NewLine, Errors);

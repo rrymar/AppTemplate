@@ -1,6 +1,6 @@
 ﻿namespace AppTemplate.UserManagement
 {
-    public static class UsersRoutes
+    public static class UserManagementRoutes
     {
         public const string Users = "Users";
     }

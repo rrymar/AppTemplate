@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AppTemplate.UserManagement.Users
 {
     [ApiController]
-    [Route(UsersRoutes.Users)]
+    [Route(UserManagementRoutes.Users)]
     public class UsersController : ControllerBase
     {
         private readonly SearchUserQueryHandler searchHandler;

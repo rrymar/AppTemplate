@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppTemplate.Database.Migrations
 {
-    public class Migrations
+    public static class MigrationScripts
     {
     }
 }

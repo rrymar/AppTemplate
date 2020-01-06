@@ -10,9 +10,9 @@
 
   <ItemGroup>
     <Content Include="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj" />
     <ProjectReference Include="..\AppTemplate.Web\AppTemplate.Web.csproj" />
     <ProjectReference Include="..\TestsCore\TestsCore.csproj" />
     <ProjectReference Include="..\WebCore\WebCore.csproj" />
