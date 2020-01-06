@@ -8,7 +8,6 @@ using Xunit;
 namespace AppTemplate.UserManagement.Tests
 {
     [Collection(FixtureCollection.Name)]
-    [AutoRollback]
     public class UsersTests : IntegrationTest
     {
         private readonly RestRequest request = UserManagementRoutes.Users.ToRestRequest();

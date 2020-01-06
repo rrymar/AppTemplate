@@ -1,10 +1,12 @@
 ﻿using AppTemplate.Database;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using TestsCore.Database;
 using WebCore.WebClient;
 
 namespace AppTemplate.UserManagement.Tests
 {
+    [AutoRollback]
     public abstract class IntegrationTest
     {
         private readonly TestApplicationFactory factory;
