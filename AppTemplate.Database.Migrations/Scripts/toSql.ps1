@@ -7,7 +7,7 @@
  )
 
 
-$rootPath =  [IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
+$rootPath =  [IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\.."))
 $migrationsPath = $rootPath + $sourcePath
 $scriptspath = $rootPath + $destPath
 

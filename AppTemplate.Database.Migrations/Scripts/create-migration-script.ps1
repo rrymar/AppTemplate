@@ -28,7 +28,7 @@ GO
 $replacePatterntFrom = "IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory]";
 $replacePatterntTo = "IF @@TRANCOUNT>0 AND NOT EXISTS(SELECT * FROM [__EFMigrationsHistory]";
 
-$rootPath = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ..\))
+$rootPath = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ..\..))
 $migrationsPath = $rootPath + $sourcePath
 $outputPath = $rootPath + $destPath
 

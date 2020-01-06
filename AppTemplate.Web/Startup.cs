@@ -25,8 +25,7 @@ namespace AppTemplate.Web
             var connectionString = Configuration.GetConnectionString("Database");
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlServer(connectionString,
-                    x => x.MigrationsAssembly("AppTemplate.Database.Migrations"));
+                options.UseSqlServer(connectionString);
             });
 
             services.AddControllers()

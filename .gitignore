@@ -239,3 +239,4 @@ _Pvt_Extensions
 **/node_modules
 
 **/Logs/*
+/AppTemplate.Database.Migrations/MigrationsScript.sql
