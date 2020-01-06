@@ -6,8 +6,6 @@ namespace WebCore.WebClient
 {
     public interface IHttpClient : IDisposable
     {
-        event EventHandler OnBeforeRequest;
-
         void AddHeader(string name, string value);
 
         void RemoveHeader(string name);

@@ -7,9 +7,9 @@ namespace AppTemplate.UserManagement
 {
     public class UserManagementModule
     {
-        public static void Main(string[] args)
-        {
-            //hack to get it working with Microsoft.NET.Sdk.Web
-        }
+        //public static void Main(string[] args)
+        //{
+        //    //hack to get it working with Microsoft.NET.Sdk.Web
+        //}
     }
 }
