@@ -1,8 +1,8 @@
 using System;
 
-namespace AppTemplate.Web
+namespace AppTemplate.UserManagement
 {
-    public class WeatherForecast
+    public class User
     {
         public DateTime Date { get; set; }
 
