@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebCore.WebClient
 {
-    public class RestClient
+    public class RestClient : IDisposable
     {
         protected readonly IHttpClient client;
 
@@ -115,6 +115,11 @@ namespace WebCore.WebClient
                 var result = response.Content.ReadAsStringAsync().Result;
                 throw new Exception($"Invalid response: '{result}'", e);
             }
+        }
+
+        public void Dispose()
+        {
+            client.Dispose();
         }
     }
 }

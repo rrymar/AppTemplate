@@ -5,17 +5,19 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Web", "AppTemplate.Web\AppTemplate.Web.csproj", "{18657C9E-A4E4-4B86-BE24-8A618B390887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCore", "WebCore\WebCore.csproj", "{1005646D-D82A-4931-8C22-F4043E273AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCore", "WebCore\WebCore.csproj", "{1005646D-D82A-4931-8C22-F4043E273AF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.UserManagement", "AppTemplate.UserManagement\AppTemplate.UserManagement.csproj", "{A463E345-70AF-4C50-AFC3-A559B1A639CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.UserManagement", "AppTemplate.UserManagement\AppTemplate.UserManagement.csproj", "{A463E345-70AF-4C50-AFC3-A559B1A639CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsCore", "TestsCore\TestsCore.csproj", "{6B8966C0-A845-422A-8E18-FEA7E6EA0419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsCore", "TestsCore\TestsCore.csproj", "{6B8966C0-A845-422A-8E18-FEA7E6EA0419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.UserManagement.Tests", "AppTemplate.UserManagement.Tests\AppTemplate.UserManagement.Tests.csproj", "{F5FC2151-4195-4183-A260-D26CEE663A5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.UserManagement.Tests", "AppTemplate.UserManagement.Tests\AppTemplate.UserManagement.Tests.csproj", "{F5FC2151-4195-4183-A260-D26CEE663A5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.Database", "AppTemplate.Database\AppTemplate.Database.csproj", "{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Database", "AppTemplate.Database\AppTemplate.Database.csproj", "{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.Database.Migrations", "AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj", "{06D85F55-8B3E-4393-AC59-10286D5FE00F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Database.Migrations", "AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj", "{06D85F55-8B3E-4393-AC59-10286D5FE00F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.InterationTesting", "AppTemplate.InterationTesting\AppTemplate.InterationTesting.csproj", "{C21C189C-B7BE-4C6C-8553-C35378468099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D85F55-8B3E-4393-AC59-10286D5FE00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21C189C-B7BE-4C6C-8553-C35378468099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21C189C-B7BE-4C6C-8553-C35378468099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21C189C-B7BE-4C6C-8553-C35378468099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21C189C-B7BE-4C6C-8553-C35378468099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
