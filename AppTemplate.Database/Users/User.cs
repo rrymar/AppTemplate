@@ -10,12 +10,6 @@ namespace AppTemplate.Database.Users
         [StringLength(32)]
         public string Username { get; set; }
 
-        [StringLength(100)]
-        public string PasswordHash { get; set; }
-
-        [StringLength(40)]
-        public string PasswordSalt { get; set; }
-
         [StringLength(50)]
         public string FirstName { get; set; }
 
