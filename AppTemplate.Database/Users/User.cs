@@ -35,7 +35,7 @@ namespace AppTemplate.Database.Users
 
     public static class KnownUsers
     {
-        public const int System = 0;
+        public const int System = 1;
 
         public static readonly int[] SystemUsers = { System };
     }
