@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AppTemplate.UserManagement.Users
+namespace AppTemplate.Users.UserManagement
 {
     public class SearchUserQueryHandler
     {

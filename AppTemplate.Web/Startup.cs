@@ -1,4 +1,3 @@
-using AppTemplate.UserManagement;
 using AppTemplate.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebCore.DependencyInjection;
-using System;
+using AppTemplate.Users;
 
 namespace AppTemplate.Web
 {
@@ -27,9 +26,9 @@ namespace AppTemplate.Web
             services.AddDbContext<DataContext>(o => o.UseSqlServer(connectionString));
 
             services.AddControllers()
-               .AddApplicationPart(typeof(UserManagementModule).Assembly);
+               .AddApplicationPart(typeof(UsersModule).Assembly);
 
-            services.RegisterModule<UserManagementModule>();
+            services.RegisterModule<UsersModule>();
 
             services.AddSpaStaticFiles(configuration =>
             {

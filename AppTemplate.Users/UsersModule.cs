@@ -1,12 +1,12 @@
 ﻿using AppTemplate.Database;
 using AppTemplate.UserManagement.Authentication;
-using AppTemplate.UserManagement.Users;
+using AppTemplate.Users.UserManagement;
 using Microsoft.Extensions.DependencyInjection;
 using WebCore.DependencyInjection;
 
-namespace AppTemplate.UserManagement
+namespace AppTemplate.Users
 {
-    public class UserManagementModule : DiModule
+    public class UsersModule : DiModule
     {
         public override void Register(IServiceCollection services)
         {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AppTemplate.UserManagement.Users
+namespace AppTemplate.Users.UserManagement
 {
     [ApiController]
-    [Route(UserManagementRoutes.Users)]
+    [Route(UsersRoutes.Users)]
     public class UsersController : ControllerBase
     {
         private readonly SearchUserQueryHandler searchHandler;

@@ -1,6 +1,6 @@
 using System;
 
-namespace AppTemplate.UserManagement.Users
+namespace AppTemplate.Users.UserManagement
 {
     public class UserModel
     {

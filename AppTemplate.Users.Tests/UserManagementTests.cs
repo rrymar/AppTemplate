@@ -1,6 +1,7 @@
 ﻿using AppTemplate.Database;
 using AppTemplate.InterationTesting;
-using AppTemplate.UserManagement.Users;
+using AppTemplate.Users;
+using AppTemplate.Users.UserManagement;
 using FluentAssertions;
 using System.Collections.Generic;
 using WebCore.WebClient;
@@ -8,17 +9,14 @@ using Xunit;
 
 namespace AppTemplate.UserManagement.Tests
 {
-    public class UsersTests : IntegrationTest
+    [Collection(FixtureCollection.Name)]
+    public class UserManagementTests : IntegrationTest
     {
-        private readonly RestRequest request = UserManagementRoutes.Users.ToRestRequest();
+        private readonly RestRequest request = UsersRoutes.Users.ToRestRequest();
 
-        public UsersTests(TestApplicationFactory factory) : base(factory)
+        public UserManagementTests(TestApplicationFactory factory) : base(factory)
         {
         }
-
-        //public UsersTests(TestApplicationFactory factory) : base(factory)
-        //{
-        //}
 
         [Fact]
         public void ItReturnsUsers()

@@ -5,11 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using TestsCore.Database;
 using WebCore.WebClient;
-using Xunit;
 
 namespace AppTemplate.InterationTesting
 {
-    [Collection(FixtureCollection.Name)]
     public abstract class IntegrationTest : IntegrationTest<DataContext, Startup>
     {
         protected IntegrationTest(TestApplicationFactory factory) : base(factory)
