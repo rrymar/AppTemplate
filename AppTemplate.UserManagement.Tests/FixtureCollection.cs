@@ -1,6 +1,7 @@
-﻿using Xunit;
+﻿using AppTemplate.InterationTesting;
+using Xunit;
 
-namespace AppTemplate.InterationTesting
+namespace AppTemplate.UserManagement.Tests
 {
     [CollectionDefinition(Name)]
     public class FixtureCollection

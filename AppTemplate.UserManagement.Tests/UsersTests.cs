@@ -16,6 +16,10 @@ namespace AppTemplate.UserManagement.Tests
         {
         }
 
+        //public UsersTests(TestApplicationFactory factory) : base(factory)
+        //{
+        //}
+
         [Fact]
         public void ItReturnsUsers()
         {
