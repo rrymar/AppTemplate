@@ -1,10 +1,13 @@
-using AppTemplate.Database.Core;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppTemplate.Database.Users
 {
-    public class UserRole : AuditEntity
+    public class UserRole
     {
+        [Key]
+        public int Id { get; set; }
+
         public int UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]

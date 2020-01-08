@@ -10,7 +10,7 @@ namespace AppTemplate.Database.Core
         DateTime UpdatedOn { get; set; }
     }
 
-    public class AuditEntity : IDeactivatable, IAuditEntity
+    public class AuditEntity : IDeactivatable, IAuditEntity, IIdentifiable
     {
         [Key]
         public int Id { get; set; }

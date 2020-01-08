@@ -11,7 +11,7 @@ namespace AppTemplate.Users
         public override void Register(IServiceCollection services)
         {
             services.AddScoped<ICurrentUserLocator, CurrentUserLocator>();
-            services.AddTransient<SearchUserQueryHandler>();
+            services.RegisterModule<UserManagementModule>();
         }
     }
 }
