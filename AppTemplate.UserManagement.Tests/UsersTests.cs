@@ -1,13 +1,13 @@
-﻿using AppTemplate.UserManagement.Users;
+﻿using AppTemplate.Database;
+using AppTemplate.InterationTesting;
+using AppTemplate.UserManagement.Users;
 using FluentAssertions;
 using System.Collections.Generic;
-using TestsCore.Database;
 using WebCore.WebClient;
 using Xunit;
 
 namespace AppTemplate.UserManagement.Tests
 {
-    [Collection(FixtureCollection.Name)]
     public class UsersTests : IntegrationTest
     {
         private readonly RestRequest request = UserManagementRoutes.Users.ToRestRequest();

@@ -1,5 +1,4 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Database.Migrations;
+﻿using AppTemplate.Database.Migrations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -34,7 +33,7 @@ namespace AppTemplate.InterationTesting
             builder.ConfigureTestServices(s =>
             {
                 var provider = s.BuildServiceProvider();
-                var db = provider.GetRequiredService<DataContext>();
+                var db = provider.GetRequiredService<TDbContex>();
                 db.InitTestDatabases(typeof(MigrationScripts).Assembly);
                 provider.Dispose();
             });
