@@ -13,6 +13,7 @@ namespace AppTemplate.Users.UserManagement
             services.AddTransient<UpdateUserHandler>();
             services.AddTransient<DeleteUserHandler>();
             services.AddTransient<GetUserHandler>();
+            services.AddTransient<UserMapper>();
         }
     }
 }

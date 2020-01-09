@@ -1,4 +1,4 @@
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE TABLE [Roles] (
         [Id] int NOT NULL IDENTITY,
@@ -9,7 +9,7 @@ END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE TABLE [Users] (
         [Id] int NOT NULL IDENTITY,
@@ -27,13 +27,10 @@ END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE TABLE [UserRoles] (
         [Id] int NOT NULL IDENTITY,
-        [IsActive] bit NOT NULL,
-        [CreatedOn] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
-        [UpdatedOn] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
         [UserId] int NOT NULL,
         [RoleId] int NOT NULL,
         CONSTRAINT [PK_UserRoles] PRIMARY KEY ([Id]),
@@ -44,45 +41,38 @@ END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
-BEGIN
-    CREATE INDEX [IX_UserRoles_IsActive] ON [UserRoles] ([IsActive]);
-END;
-
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE INDEX [IX_UserRoles_RoleId] ON [UserRoles] ([RoleId]);
 END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE INDEX [IX_UserRoles_UserId] ON [UserRoles] ([UserId]);
 END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE INDEX [IX_Users_IsActive] ON [Users] ([IsActive]);
 END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     CREATE INDEX [IX_Users_Username] ON [Users] ([Username]);
 END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200106140708_AddUsers')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200109083415_AddUsers')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20200106140708_AddUsers', N'3.1.0');
+    VALUES (N'20200109083415_AddUsers', N'3.1.0');
 END;
 
 GO
