@@ -7,17 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Web", "AppTempl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCore", "WebCore\WebCore.csproj", "{1005646D-D82A-4931-8C22-F4043E273AF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Users", "AppTemplate.Users\AppTemplate.Users.csproj", "{A463E345-70AF-4C50-AFC3-A559B1A639CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Users", "Users\AppTemplate.Users\AppTemplate.Users.csproj", "{A463E345-70AF-4C50-AFC3-A559B1A639CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsCore", "TestsCore\TestsCore.csproj", "{6B8966C0-A845-422A-8E18-FEA7E6EA0419}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Users.Tests", "AppTemplate.Users.Tests\AppTemplate.Users.Tests.csproj", "{F5FC2151-4195-4183-A260-D26CEE663A5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Users.Tests", "Users\AppTemplate.Users.Tests\AppTemplate.Users.Tests.csproj", "{F5FC2151-4195-4183-A260-D26CEE663A5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Database", "AppTemplate.Database\AppTemplate.Database.csproj", "{6D90823A-8CBD-4A0C-8EAF-F323C9F06126}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Database.Migrations", "AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj", "{06D85F55-8B3E-4393-AC59-10286D5FE00F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.InterationTesting", "AppTemplate.InterationTesting\AppTemplate.InterationTesting.csproj", "{C21C189C-B7BE-4C6C-8553-C35378468099}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{F887ED71-3C86-482B-B573-9A9528407DE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A463E345-70AF-4C50-AFC3-A559B1A639CD} = {F887ED71-3C86-482B-B573-9A9528407DE9}
+		{F5FC2151-4195-4183-A260-D26CEE663A5C} = {F887ED71-3C86-482B-B573-9A9528407DE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E26253F-C7B3-4BCB-9072-C186A53DB3E2}

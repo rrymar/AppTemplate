@@ -21,7 +21,7 @@ namespace AppTemplate.Users.UserManagement.Handlers
         {
             var queryable = dataContext.Users.Where(e => e.IsActive);
             if (!string.IsNullOrWhiteSpace(query.Keyword))
-                queryable.Where(e => EF.Functions.Like(e.FullName, query.Keyword + "%");
+                queryable.Where(e => EF.Functions.Like(e.FullName, query.Keyword + "%"));
 
             var totalCount = queryable.Count();
             var items = queryable.ApplyPagingAndSorting(query)

@@ -29,6 +29,7 @@ namespace AppTemplate.Users.UserManagement
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
                 Email = entity.Email,
+                IsSystemUser = KnownUsers.SystemUsers.Contains(entity.Id),
                 Roles = entity.Roles?.Select(e => new UserRoleModel()
                 {
                     RoleId = e.RoleId,

@@ -19,5 +19,7 @@ namespace AppTemplate.Users.UserManagement
 
         public List<UserRoleModel> Roles { get; set; }
 
+        public bool IsSystemUser { get; set; }
+
     }
 }
