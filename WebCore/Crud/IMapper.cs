@@ -1,5 +1,4 @@
-﻿
-namespace WebCore.Contracts
+﻿namespace WebCore.Crud
 {
     public interface IMapper<TEntity, TModel>
         where TEntity : class

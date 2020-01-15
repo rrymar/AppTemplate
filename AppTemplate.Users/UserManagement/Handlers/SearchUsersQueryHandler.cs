@@ -1,6 +1,7 @@
 ﻿using AppTemplate.Database;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using WebCore.Crud;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {
@@ -16,10 +17,18 @@ namespace AppTemplate.Users.UserManagement.Handlers
             this.mapper = mapper;
         }
 
-        internal List<UserModel> Handle()
+        internal ResultsList<UserModel> Handle(SearchQuery query)
         {
-            return dataContext.Users.Where(e => e.IsActive)
-                .Select(mapper.ToModel).ToList();
+            var queryable = dataContext.Users.Where(e => e.IsActive);
+            if (!string.IsNullOrWhiteSpace(query.Keyword))
+                queryable.Where(e => EF.Functions.Like(e.FullName, query.Keyword + "%");
+
+            var totalCount = queryable.Count();
+            var items = queryable.ApplyPagingAndSorting(query)
+                .Select(mapper.ToModel)
+                .ToList();
+
+            return new ResultsList<UserModel>(items, totalCount);
         }
     }
 }
