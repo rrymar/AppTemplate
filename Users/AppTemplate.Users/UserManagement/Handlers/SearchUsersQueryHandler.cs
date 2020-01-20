@@ -1,5 +1,6 @@
 ﻿using AppTemplate.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Linq;
 using WebCore.Crud;
 
@@ -27,7 +28,6 @@ namespace AppTemplate.Users.UserManagement.Handlers
             var items = queryable.ApplyPagingAndSorting(query)
                 .Select(mapper.ToModel)
                 .ToList();
-
             return new ResultsList<UserModel>(items, totalCount);
         }
     }

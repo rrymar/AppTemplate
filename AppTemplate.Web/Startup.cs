@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WebCore.DependencyInjection;
 using AppTemplate.Users;
 using WebCore.Errors;
+using Microsoft.OpenApi.Models;
 
 namespace AppTemplate.Web
 {
@@ -26,8 +27,15 @@ namespace AppTemplate.Web
             var connectionString = Configuration.GetConnectionString("Database");
             services.AddDbContext<DataContext>(o => o.UseSqlServer(connectionString));
 
+            services.AddApplicationInsightsTelemetry();
+
             services.AddControllers()
                .AddApplicationPart(typeof(UsersModule).Assembly);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AppTemplate", Version = "v1" });
+            });
 
             services.RegisterModule<UsersModule>();
 
@@ -39,11 +47,9 @@ namespace AppTemplate.Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            ConfigureApp(app, env);
-        }
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppTemplate API V1"));
 
-        public static void ConfigureApp(IApplicationBuilder app, IWebHostEnvironment env)
-        {
             if (!env.IsDevelopment())
                 app.UseHsts();
 
