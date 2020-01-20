@@ -113,7 +113,7 @@ namespace WebCore.WebClient
             catch (Exception e)
             {
                 var result = response.Content.ReadAsStringAsync().Result;
-                throw new Exception($"Invalid response: '{result}'", e);
+                throw new Exception($"Invalid response: Status {response.StatusCode} Error '{result}'", e);
             }
         }
 

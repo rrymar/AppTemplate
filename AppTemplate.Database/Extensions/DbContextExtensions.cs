@@ -32,7 +32,7 @@ namespace AppTemplate.Database.Extensions
             var result = new Changes<TEntity, TModel>();
 
             if (entities == null)
-                throw new ArgumentException("Entities list cannot be empty");
+                return result;
 
             if (models?.Any() != true)
             {

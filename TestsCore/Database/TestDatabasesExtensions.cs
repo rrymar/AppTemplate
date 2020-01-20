@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace TestsCore.Database
@@ -9,7 +10,10 @@ namespace TestsCore.Database
 
         private static bool dbInitialized;
 
-        public static void InitTestDatabases(this DbContext dbContext, params Assembly[] migrationAsssemblies)
+        public static void InitTestDatabases<TContext>(this TContext dbContext,
+            Assembly migrationAsssembly,
+            params List<ITestMigration<TContext>>[] testMigrations)
+            where TContext : DbContext
         {
             lock (locker)
             {
@@ -18,10 +22,12 @@ namespace TestsCore.Database
                 var db = new TestDatabaseMigrator(dbContext);
                 db.Create();
 
-                foreach (var assembly in migrationAsssemblies)
+                db.RunMigrations(migrationAsssembly);
+                foreach (var testMigration in testMigrations)
                 {
-                    db.RunMigrations(assembly);
+                    db.RunMigrations(testMigration);
                 }
+
 
                 dbInitialized = true;
             }

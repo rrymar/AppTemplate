@@ -43,7 +43,7 @@ namespace AppTemplate.Users.UserManagement
             return updateHandler.Handle(user);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
             deleteHandler.Handle(id);

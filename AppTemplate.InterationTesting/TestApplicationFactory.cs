@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using System.IO;
 using TestsCore;
 using TestsCore.Database;
@@ -16,6 +17,9 @@ namespace AppTemplate.InterationTesting
         where TDbContex : DbContext
         where TStartup : class
     {
+        public virtual List<ITestMigration<TDbContex>> TestMigrations 
+            => new List<ITestMigration<TDbContex>>();
+
         public IHttpClient CreateTestClient()
         {
             return new TestingHttpClient(CreateClient());
@@ -34,7 +38,7 @@ namespace AppTemplate.InterationTesting
             {
                 var provider = s.BuildServiceProvider();
                 var db = provider.GetRequiredService<TDbContex>();
-                db.InitTestDatabases(typeof(MigrationScripts).Assembly);
+                db.InitTestDatabases(typeof(MigrationScripts).Assembly, TestMigrations);
                 provider.Dispose();
 
                 ConfigureTestServices(s);

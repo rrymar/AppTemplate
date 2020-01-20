@@ -36,15 +36,15 @@ namespace TestsCore.Database
                 .OrderBy(r => r);
         }
 
-        //public void RunMigrations<T>(IEnumerable<ITestMigration<T>> testMigrations)
-        //    where T : DbContext
-        //{
-        //    var appliedMigrations = GetAppliedMigrations();
-        //    var toRun = testMigrations.Where(m => !appliedMigrations.Contains(m.Name)).ToList();
+        public void RunMigrations<T>(IEnumerable<ITestMigration<T>> testMigrations)
+            where T : DbContext
+        {
+            var appliedMigrations = GetAppliedMigrations();
+            var toRun = testMigrations.Where(m => !appliedMigrations.Contains(m.Name)).ToList();
 
-        //    var executor = new TestMigrationExecutor();
-        //    executor.Execute(context, toRun);
-        //}
+            var executor = new TestMigrationExecutor();
+            executor.Execute(context, toRun);
+        }
 
         private static string GetMigrationId(string resourceName)
         {
@@ -57,7 +57,9 @@ namespace TestsCore.Database
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = "IF OBJECT_ID(N'__EFMigrationsHistory') IS NOT NULL SELECT MigrationId FROM __EFMigrationsHistory";
-                command.Connection.Open();
+                if(command.Connection.State != System.Data.ConnectionState.Open)
+                    command.Connection.Open();
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())

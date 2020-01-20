@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebCore.DependencyInjection;
 using AppTemplate.Users;
+using WebCore.Errors;
 
 namespace AppTemplate.Web
 {
@@ -43,10 +44,10 @@ namespace AppTemplate.Web
 
         public static void ConfigureApp(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-                app.UseDeveloperExceptionPage();
-            else
+            if (!env.IsDevelopment())
                 app.UseHsts();
+
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
