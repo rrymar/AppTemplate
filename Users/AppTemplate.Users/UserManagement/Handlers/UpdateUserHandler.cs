@@ -10,17 +10,13 @@ namespace AppTemplate.Users.UserManagement.Handlers
 
         private readonly UserMapper mapper;
 
-        private readonly GetUserHandler getUserHandler;
-
-        public UpdateUserHandler(DataContext dataContext, UserMapper mapper,
-            GetUserHandler getUserHandler)
+        public UpdateUserHandler(DataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
             this.mapper = mapper;
-            this.getUserHandler = getUserHandler;
         }
 
-        internal UserModel Handle(UserModel model)
+        internal void Handle(UserModel model)
         {
             var user = dataContext.Users.Find(model.Id);
             if (user == null)
@@ -39,8 +35,6 @@ namespace AppTemplate.Users.UserManagement.Handlers
                 });
 
             dataContext.SaveChanges();
-
-            return getUserHandler.Handle(user.Id);
         }
     }
 }

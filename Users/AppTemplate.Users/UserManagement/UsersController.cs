@@ -33,14 +33,16 @@ namespace AppTemplate.Users.UserManagement
         [HttpPost]
         public UserModel Post(UserModel user)
         {
-            return createHandler.Handle(user);
+            createHandler.Handle(user);
+            return getHandler.Handle(user.Id);
         }
 
         [HttpPut("{id}")]
         public UserModel Put(int id, UserModel user)
         {
             user.Id = id;
-            return updateHandler.Handle(user);
+            updateHandler.Handle(user);
+            return getHandler.Handle(user.Id);
         }
 
         [HttpDelete("{id}")]
