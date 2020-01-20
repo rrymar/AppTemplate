@@ -13,8 +13,6 @@ namespace AppTemplate.Users.Tests
     [Collection(FixtureCollection.Name)]
     public class UserManagementTests : IntegrationTest
     {
-        // private readonly RestRequest request = UsersRoutes.Users.ToRestRequest();
-
         private readonly IUserTestService testService;
 
         public UserManagementTests(TestApplicationFactory factory) : base(factory)

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using TestsCore.Database;
-using WebCore.WebClient;
 
 namespace AppTemplate.InterationTesting
 {
@@ -30,14 +29,11 @@ namespace AppTemplate.InterationTesting
 
         private readonly IServiceScope scope;
 
-  //      protected RestClient Client;
-
         protected IntegrationTest(TestApplicationFactory<TDbContex, TStartup> factory)
         {
             this.factory = factory;
             factory.Server.PreserveExecutionContext = true;
 
-//            Client = new RestClient(factory.CreateTestClient());
             scope = factory.Services.CreateScope();
             Services = scope.ServiceProvider;
 
@@ -47,7 +43,6 @@ namespace AppTemplate.InterationTesting
 
         public virtual void Dispose()
         {
- //           Client?.Dispose();
             scope?.Dispose();
         }
     }
