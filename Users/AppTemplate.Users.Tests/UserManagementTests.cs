@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using WebCore.WebClient;
 using Xunit;
 
-namespace AppTemplate.UserManagement.Tests
+namespace AppTemplate.Users.Tests
 {
     [Collection(FixtureCollection.Name)]
     public class UserManagementTests : IntegrationTest

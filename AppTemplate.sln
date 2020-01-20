@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.InterationTesti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{F887ED71-3C86-482B-B573-9A9528407DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTemplate.Users.TestFactories", "Users\AppTemplate.Users.TestFactories\AppTemplate.Users.TestFactories.csproj", "{3B10B8BA-40CA-40A4-8645-DFE57F37DD09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTemplate.Users.TestServices", "Users\AppTemplate.Users.TestServices\AppTemplate.Users.TestServices.csproj", "{3B10B8BA-40CA-40A4-8645-DFE57F37DD09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
