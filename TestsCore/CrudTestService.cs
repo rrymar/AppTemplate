@@ -2,7 +2,7 @@
 
 namespace TestsCore
 {
-    public abstract class CrudTestService<TModel,TEntity>
+    public abstract class CrudTestService<TModel, TEntity> : ICrudTestService<TModel, TEntity>
     {
         protected readonly RestClient client;
 
@@ -15,7 +15,7 @@ namespace TestsCore
 
         public virtual TModel Get(int id)
         {
-            var request = new RestRequest(Url +"/" + id);
+            var request = new RestRequest(Url + "/" + id);
             return client.Get<TModel>(request);
         }
     }

@@ -36,7 +36,14 @@ namespace AppTemplate.InterationTesting
                 var db = provider.GetRequiredService<TDbContex>();
                 db.InitTestDatabases(typeof(MigrationScripts).Assembly);
                 provider.Dispose();
+
+                ConfigureTestServices(s);
             });
+        }
+
+        protected virtual void ConfigureTestServices(IServiceCollection services) 
+        {
+            services.AddScoped(_ => new RestClient(CreateTestClient()));
         }
     }
 }

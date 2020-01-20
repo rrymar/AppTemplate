@@ -4,7 +4,11 @@ using TestsCore;
 
 namespace AppTemplate.Users.TestServices
 {
-    public class UserTestService : CrudTestService<UserModel, User>
+    public interface IUserTestService : ICrudTestService<UserModel, User>
+    {
+    }
+
+    public class UserTestService : CrudTestService<UserModel, User>, IUserTestService
     {
         public UserTestService(WebCore.WebClient.RestClient client) : base(client)
         {

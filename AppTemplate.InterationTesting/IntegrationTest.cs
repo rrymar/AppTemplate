@@ -10,13 +10,9 @@ namespace AppTemplate.InterationTesting
 {
     public abstract class IntegrationTest : IntegrationTest<DataContext, Startup>
     {
-        protected IntegrationTest(TestApplicationFactory factory) : base(factory)
+        protected IntegrationTest(TestApplicationFactory<DataContext, Startup> factory) : base(factory)
         {
         }
-    }
-
-    public class TestApplicationFactory : TestApplicationFactory<DataContext, Startup>
-    {
     }
 
     [AutoRollback]
@@ -34,15 +30,14 @@ namespace AppTemplate.InterationTesting
 
         private readonly IServiceScope scope;
 
-        protected RestClient Client;
-
+  //      protected RestClient Client;
 
         protected IntegrationTest(TestApplicationFactory<TDbContex, TStartup> factory)
         {
             this.factory = factory;
             factory.Server.PreserveExecutionContext = true;
 
-            Client = new RestClient(factory.CreateTestClient());
+//            Client = new RestClient(factory.CreateTestClient());
             scope = factory.Services.CreateScope();
             Services = scope.ServiceProvider;
 
@@ -52,7 +47,7 @@ namespace AppTemplate.InterationTesting
 
         public virtual void Dispose()
         {
-            Client?.Dispose();
+ //           Client?.Dispose();
             scope?.Dispose();
         }
     }

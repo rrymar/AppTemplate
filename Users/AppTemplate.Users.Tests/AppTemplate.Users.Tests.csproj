@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\AppTemplate.InterationTesting\AppTemplate.InterationTesting.csproj" />
+    <ProjectReference Include="..\AppTemplate.Users.TestServices\AppTemplate.Users.TestServices.csproj" />
     <ProjectReference Include="..\AppTemplate.Users\AppTemplate.Users.csproj" />
   </ItemGroup>
 

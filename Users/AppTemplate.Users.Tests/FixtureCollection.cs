@@ -1,5 +1,4 @@
-﻿using AppTemplate.InterationTesting;
-using Xunit;
+﻿using Xunit;
 
 namespace AppTemplate.Users.Tests
 {
