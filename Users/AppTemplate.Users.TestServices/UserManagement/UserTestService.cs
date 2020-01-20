@@ -1,7 +1,7 @@
 ﻿using AppTemplate.Users.UserManagement;
 using TestsCore;
 
-namespace AppTemplate.Users.TestServices
+namespace AppTemplate.Users.TestServices.UserManagement
 {
     public interface IUserTestService : ICrudTestService<UserModel>
     {

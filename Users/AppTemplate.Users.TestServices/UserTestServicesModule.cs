@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AppTemplate.Users.TestServices.UserManagement;
+using Microsoft.Extensions.DependencyInjection;
 using WebCore.DependencyInjection;
 
 namespace AppTemplate.Users.TestServices
@@ -8,6 +9,7 @@ namespace AppTemplate.Users.TestServices
         public override void Register(IServiceCollection services)
         {
             services.AddTransient<IUserTestService, UserTestService>();
+            services.AddTransient<SearchUsersTestService>();
         }
     }
 }

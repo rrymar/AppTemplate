@@ -1,17 +1,15 @@
 ﻿using AppTemplate.Database.Users;
-using AppTemplate.InterationTesting;
-using AppTemplate.Users.TestServices;
 using AppTemplate.Users.TestServices.TestMigrations;
+using AppTemplate.Users.TestServices.UserManagement;
 using AppTemplate.Users.UserManagement;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using TestsCore.Assertion;
 using Xunit;
 
-namespace AppTemplate.Users.Tests
+namespace AppTemplate.Users.Tests.UserManagement
 {
-    [Collection(FixtureCollection.Name)]
-    public class UserManagementTests : IntegrationTest
+    public class UserManagementTests : UsersIntegrationTest
     {
         private readonly IUserTestService testService;
 
@@ -67,7 +65,7 @@ namespace AppTemplate.Users.Tests
         {
             testService.Delete(UsersTestConstants.User.Id);
 
-            testService.Invoking(s=> s.Get(UsersTestConstants.User.Id))
+            testService.Invoking(s => s.Get(UsersTestConstants.User.Id))
                 .ShouldThrowHttpError(System.Net.HttpStatusCode.NotFound);
         }
     }

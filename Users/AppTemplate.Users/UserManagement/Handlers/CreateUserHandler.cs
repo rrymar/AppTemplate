@@ -10,7 +10,6 @@ namespace AppTemplate.Users.UserManagement.Handlers
 
         private readonly UserMapper mapper;
 
-
         public CreateUserHandler(DataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
