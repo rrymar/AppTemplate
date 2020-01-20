@@ -1,6 +1,8 @@
 ﻿using AppTemplate.Database;
+using AppTemplate.Database.Users;
 using AppTemplate.InterationTesting;
 using AppTemplate.Users.TestServices;
+using AppTemplate.Users.UserManagement;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
@@ -18,27 +20,28 @@ namespace AppTemplate.Users.Tests
         }
 
         [Fact]
-        public void ItReturnUser()
+        public void ItReturnsSystemUser()
         {
-            var expected = new Database.Users.User()
-            {
-                Username = "AAAAA",
-            };
-            DataContext.Users.Add(expected);
-            DataContext.SaveChanges();
-
-
-            var actual = testService.Get(expected.Id);
+            var actual = testService.Get(KnownUsers.System);
             actual.Should().NotBeNull();
-            actual.Username.Should().Be(expected.Username);
+            actual.Id.Should().Be(1);
         }
 
-        //[Fact]
-        //public void ItReturnsUsers2()
-        //{
-        //    var actual = Client.Get<List<UserModel>>(request);
-        //    actual.Should().NotBeNull();
-        //    actual.ForEach(a => a.Username.Should().NotBeNullOrWhiteSpace());
-        //}
+        [Fact]
+        public void ItCreatesUser()
+        {
+            var user = new UserModel()
+            {
+                FirstName = "Ruslan",
+                LastName = "Rymar",
+                Username = "rrmar",
+            };
+
+            var actual = testService.Create(user);
+
+            actual.Username.Should().Be(user.Username);
+            actual.Roles.Should().BeEmpty();
+            actual.FullName.Should().Be(user.FirstName + " " + user.LastName);
+        }
     }
 }
