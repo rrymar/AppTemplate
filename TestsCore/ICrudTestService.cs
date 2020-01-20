@@ -1,9 +1,20 @@
 ﻿namespace TestsCore
 {
-    public interface ICrudTestService<TModel, TEntity>
+    public interface ICrudTestService<TModel>
+        : ICrudTestService<TModel, int>
+    {
+    }
+
+    public interface ICrudTestService<TModel, TId>
     {
         string Url { get; }
 
-        TModel Get(int id);
+        TModel Create(TModel model);
+
+        TModel Get(TId id);
+
+        TModel Update(TId id, TModel model);
+
+        void Delete(TId id);
     }
 }

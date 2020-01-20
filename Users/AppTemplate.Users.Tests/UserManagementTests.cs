@@ -1,11 +1,8 @@
 ﻿using AppTemplate.Database;
 using AppTemplate.InterationTesting;
 using AppTemplate.Users.TestServices;
-using AppTemplate.Users.UserManagement;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using WebCore.WebClient;
 using Xunit;
 
 namespace AppTemplate.Users.Tests

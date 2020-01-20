@@ -4,3 +4,4 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "RCS1160:Abstract type should not have public constructors.", Justification = "<Pending>", Scope = "member", Target = "~M:TestsCore.CrudTestService`2.#ctor(WebCore.WebClient.RestClient)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "RCS1160:Abstract type should not have public constructors.", Justification = "<Pending>", Scope = "member", Target = "~M:TestsCore.DefaultCrudTestService`1.#ctor(WebCore.WebClient.RestClient)")]

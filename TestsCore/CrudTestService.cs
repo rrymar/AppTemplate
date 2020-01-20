@@ -2,7 +2,17 @@
 
 namespace TestsCore
 {
-    public abstract class CrudTestService<TModel, TEntity> : ICrudTestService<TModel, TEntity>
+    public abstract class CrudTestService<TModel> 
+        : CrudTestService<TModel, int>
+    {
+        public CrudTestService(RestClient client) 
+            : base(client)
+        {
+        }
+    }
+
+    public abstract class CrudTestService<TModel, TId> 
+        : ICrudTestService<TModel, TId>
     {
         protected readonly RestClient client;
 
@@ -13,10 +23,37 @@ namespace TestsCore
             this.client = client;
         }
 
-        public virtual TModel Get(int id)
+        private RestRequest CreateRequest(TId id)
         {
-            var request = new RestRequest(Url + "/" + id);
+            return new RestRequest(Url + "/" + id);
+        }
+
+        public virtual TModel Get(TId id)
+        {
+            var request = CreateRequest(id);
             return client.Get<TModel>(request);
+        }
+
+        public virtual TModel Create(TModel model)
+        {
+            var request = new RestRequest(Url);
+            request.AddJsonContent(model);
+
+            return client.Post<TModel>(request);
+        }
+
+        public virtual TModel Update(TId id, TModel model)
+        {
+            var request = CreateRequest(id);
+            request.AddJsonContent(model);
+
+            return client.Put<TModel>(request);
+        }
+
+        public virtual void Delete(TId id)
+        {
+            var request = CreateRequest(id);
+            client.Delete(request);
         }
     }
 }
