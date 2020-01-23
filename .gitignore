@@ -240,3 +240,5 @@ _Pvt_Extensions
 
 **/Logs/*
 /AppTemplate.Database.Migrations/MigrationsScript.sql
+/AppTemplate.Web/.config/dotnet-tools.json
+/AppTemplate.Web/appsettings.QA.json
