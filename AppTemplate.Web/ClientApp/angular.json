@@ -129,6 +129,7 @@
   },
   "defaultProject": "AppTemplate",
   "cli": {
-    "analytics": "0bb6a0db-ed25-4d4b-bdec-76896cfa5a38"
+    "analytics": "0bb6a0db-ed25-4d4b-bdec-76896cfa5a38",
+    "defaultCollection": "@datorama/akita"
   }
 }
