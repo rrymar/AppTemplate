@@ -1,7 +1,3 @@
-export class SearchQuery extends SearchQueryBase {
-  keyword: string = '';
-
-}
 export class SearchQueryBase {
 
   pageIndex: number = 0;
@@ -11,6 +7,8 @@ export class SearchQueryBase {
   sortField: string = '';
 
   isDesc: boolean = true;
+}
 
-  isActive: boolean = true;
+export class SearchQuery extends SearchQueryBase {
+  keyword: string = '';
 }

@@ -30,6 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\users\user-management\user.model.ts" />
+    <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
+    <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.store.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ClientApp\angular.json" />
     <Content Include="ClientApp\e2e\tsconfig.json" />
     <Content Include="ClientApp\package-lock.json" />
@@ -42,6 +48,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Users\AppTemplate.Users\AppTemplate.Users.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\users\user-management\user.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
