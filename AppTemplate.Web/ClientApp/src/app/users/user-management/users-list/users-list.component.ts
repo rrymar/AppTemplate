@@ -25,12 +25,12 @@ export class UsersListComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new UsersListDataSource(this.store);
-    this.dataSource.load();
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+    this.dataSource.load();
   }
 }
