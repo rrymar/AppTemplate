@@ -27,6 +27,10 @@ export class UsersListDataSource extends DataSource<UserModel> {
       .pipe(takeUntil(this.disconnected))
       .subscribe(() => this.load());
 
+    this.store.select(UsersListState.totalCount)
+      .pipe(takeUntil(this.disconnected))
+      .subscribe(t => this.paginator.length = t);
+
     return this.store.select(UsersListState.items)
       .pipe(takeUntil(this.disconnected));
   }
@@ -45,14 +49,4 @@ export class UsersListDataSource extends DataSource<UserModel> {
     this.disconnected.next();
     this.disconnected.complete();
   }
-
-  //private getPagedData(data: UsersListItem[]) {
-  //  const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
-  //  return data.splice(startIndex, this.paginator.pageSize);
-  //}
-
-  //private getSortedData(data: UsersListItem[]) {
-  //  if (!this.sort.active || this.sort.direction === '') {
-  //    return data;
-  //  }
 }

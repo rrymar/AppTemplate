@@ -32,7 +32,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\users\user-management\user.model.ts" />
     <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
-    <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.store.ts" />
+    <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.state.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +52,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\users\user-management\user.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.state.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
   </ItemGroup>
 
