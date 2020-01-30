@@ -6,10 +6,10 @@ import { UserManagementModule } from './user-management/user-management.module';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    UserManagementModule
   ],
   exports: [
-    UserManagementModule
   ]
 })
 export class UsersModule { }

@@ -4,6 +4,7 @@ import { UsersListService } from './users-list.service';
 import { tap } from 'rxjs/operators';
 import { produce } from 'immer';
 import { LoadUsersAction } from './users-list.actions';
+import { Injectable } from '@angular/core';
 
 export class UsersList {
   items: UserModel[];
@@ -12,13 +13,14 @@ export class UsersList {
 }
 
 @State<UsersList>({
-  name: 'users-list',
+  name: 'usersList',
   defaults: {
     items: [],
     isLoading: false,
     totalCount: 0
   }
 })
+@Injectable()
 export class UsersListState {
   constructor(private service: UsersListService) {
   }
