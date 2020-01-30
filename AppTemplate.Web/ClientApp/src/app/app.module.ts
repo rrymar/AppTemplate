@@ -8,6 +8,9 @@ import { UsersModule } from './users/users.module';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from 'environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from './core/custom-route-reuse-strategy';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,19 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     NgxsModule.forRoot([], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsRouterPluginModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     UsersModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: RouteReuseStrategy,
+    useClass: CustomRouteReuseStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

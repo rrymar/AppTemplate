@@ -6,13 +6,13 @@ export abstract class CrudService<T> {
 
   abstract getBasePath(): string;
 
-  protected getUrl(path: string = ''): string {
+  protected getUrl(path: string | number = ''): string {
     const url = this.getBasePath();
 
     return path === '' ? url : `${url}/${path}`;
   }
 
-  get(id: string = ''): Observable<T> {
+  get(id: string | number = ''): Observable<T> {
     return this.httpClient.get<T>(this.getUrl(id));
   }
 
@@ -24,11 +24,11 @@ export abstract class CrudService<T> {
     return this.httpClient.post<T>(this.getUrl(), entity);
   }
 
-  update(id: string, entity: T): Observable<T> {
+  update(id: string | number, entity: T): Observable<T> {
     return this.httpClient.put<T>(this.getUrl(id), entity);
   }
 
-  delete(id: string): Observable<object> {
+  delete(id: string | number): Observable<object> {
     return this.httpClient.delete(this.getUrl(id));
   }
 }

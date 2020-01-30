@@ -1,0 +1,34 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="users-form">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Username"
+             maxlength="32"
+             formControlName="username">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="First Name"
+             maxlength="50"
+             formControlName="firstName">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Last Name"
+             maxlength="50"
+             formControlName="lastName">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Email"
+             maxlength="200" type="email"
+             formControlName="email">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button type="submit">Save</button>
+    <button mat-button routerLink="./">Cancel</button>
+  </div>
+</form>
