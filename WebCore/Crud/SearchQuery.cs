@@ -1,10 +1,5 @@
 ﻿namespace WebCore.Crud
 {
-    public class SearchQuery : SearchQueryBase
-    {
-        public string Keyword { get; set; }
-    }
-
     public class SearchQueryBase
     {
         public int PageIndex { get; set; }
@@ -14,5 +9,10 @@
         public string SortField { get; set; }
 
         public bool IsDesc { get; set; }
+    }
+
+    public class SearchQuery : SearchQueryBase
+    {
+        public string Keyword { get; set; }
     }
 }
