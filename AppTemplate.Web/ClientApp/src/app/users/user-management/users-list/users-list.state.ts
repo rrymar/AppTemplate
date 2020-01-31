@@ -10,13 +10,15 @@ export class UsersList extends ItemsLoadingState<UserModel> {
   totalCount: number;
 }
 
+const INITIAL_STATE = {
+  items: [],
+  isLoading: false,
+  totalCount: 0
+}
+
 @State<UsersList>({
   name: 'usersList',
-  defaults: {
-    items: [],
-    isLoading: false,
-    totalCount: 0
-  }
+  defaults: INITIAL_STATE
 })
 @Injectable()
 export class UsersListState {
@@ -40,9 +42,10 @@ export class UsersListState {
 
   @Action(LoadUsersAction)
   loadUsers(ctx: StateContext<UsersList>, action: LoadUsersAction) {
-    ctx.setState({
+
+    ctx.patchState({
       isLoading: true,
-      totalCount: 0
+      items: []
     });
 
     return this.service.search(action.query)
@@ -52,6 +55,7 @@ export class UsersListState {
           items: r.items,
           totalCount: r.totalCount
         })
-      }));
+      }, () => ctx.setState(INITIAL_STATE)));
   }
+
 }

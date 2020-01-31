@@ -30,7 +30,7 @@ export class UserDetailsState {
     ctx.setState({ isLoading: true });
 
     return this.service.get(action.id)
-      .pipe(tap(r => this.onEntityLoaded(r, ctx)));
+      .pipe(tap(r => this.updateEntity(r, ctx), () => this.onError(ctx)));
   }
 
   @Action(SaveUserAction)
@@ -44,7 +44,7 @@ export class UserDetailsState {
       : this.service.create(user);
 
     return request.pipe(
-      tap(r => this.onEntityLoaded(r, ctx)),
+      tap(r => this.updateEntity(r, ctx), () => this.onError(ctx)),
       mergeMap(() => this.navigateToList(ctx))
     );
   }
@@ -56,7 +56,7 @@ export class UserDetailsState {
     ctx.setState({ isLoading: true });
 
     return this.service.delete(user.id).pipe(
-      tap(() => this.onEntityLoaded(null, ctx)),
+      tap(() => this.updateEntity(null, ctx), () => this.onError(ctx)),
       mergeMap(() => this.navigateToList(ctx))
     );
   }
@@ -69,10 +69,17 @@ export class UserDetailsState {
   private navigateToList(ctx: StateContext<EntityLoadingState<UserModel>>) {
     return ctx.dispatch(new Navigate(['users']));
   }
-  private onEntityLoaded(entity: UserModel, ctx: StateContext<EntityLoadingState<UserModel>>) {
+
+  private onError(ctx: StateContext<EntityLoadingState<UserModel>>) {
     ctx.patchState({
       isLoading: false,
-      entity: entity
+    });
+  }
+
+  private updateEntity(entity: UserModel, ctx: StateContext<EntityLoadingState<UserModel>>) {
+    ctx.patchState({
+      entity: entity,
+      isLoading: false
     });
   }
 }

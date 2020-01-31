@@ -20,4 +20,3 @@ export class DeleteUserAction {
 export class ResetUserAction {
   static readonly type = '[UserDetails] Reset';
 }
-

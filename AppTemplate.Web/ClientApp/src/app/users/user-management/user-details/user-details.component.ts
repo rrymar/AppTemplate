@@ -5,6 +5,8 @@ import { SaveUserAction, LoadUserAction, ResetUserAction, DeleteUserAction } fro
 import { ActivatedRoute } from '@angular/router';
 import { UserDetailsState } from './user-details.state';
 import { untilDestroyed } from 'ngx-take-until-destroy';
+import { Observable, timer } from 'rxjs';
+import { debounce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-details',
@@ -15,9 +17,13 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
   constructor(private store: Store,
     private route: ActivatedRoute) {
 
+    this.isLoading$ = this.store.select(UserDetailsState.isLoading)
+      .pipe(debounce(v => timer(v ? 300 : 0)));
   }
 
   private id: number;
+
+  isLoading$: Observable<boolean>;
 
   userForm: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
