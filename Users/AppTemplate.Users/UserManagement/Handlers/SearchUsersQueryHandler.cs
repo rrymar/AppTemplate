@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Linq;
+using System.Threading;
 using WebCore.Crud;
 
 namespace AppTemplate.Users.UserManagement.Handlers
@@ -20,6 +21,9 @@ namespace AppTemplate.Users.UserManagement.Handlers
 
         internal ResultsList<UserModel> Handle(SearchQuery query)
         {
+            if(query.IsDesc)
+                Thread.Sleep(2000); // loader testing
+
             var queryable = dataContext.Users.Where(e => e.IsActive);
             if (!string.IsNullOrWhiteSpace(query.Keyword))
                 queryable.Where(e => EF.Functions.Like(e.FullName, query.Keyword + "%"));

@@ -1,4 +1,7 @@
 ﻿using AppTemplate.Database;
+using AppTemplate.Database.Users;
+using System.Linq;
+using Web.Core.Errors;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {
@@ -13,6 +16,9 @@ namespace AppTemplate.Users.UserManagement.Handlers
 
         internal void Handle(int id)
         {
+            if (KnownUsers.SystemUsers.Contains(id))
+                throw new BusinessValidationException("System users can't be deleted.");
+
             var user = dataContext.Users.Find(id);
             if (user == null) return;
 

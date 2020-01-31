@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
-import { SaveUserAction, LoadUserAction, ResetUserAction } from './user-details.actions';
+import { SaveUserAction, LoadUserAction, ResetUserAction, DeleteUserAction } from './user-details.actions';
 import { ActivatedRoute } from '@angular/router';
 import { UserDetailsState } from './user-details.state';
 import { untilDestroyed } from 'ngx-take-until-destroy';
@@ -49,6 +49,10 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
       id: this.id,
       ...this.userForm.value
     }));
+  }
+
+  delete() {
+    this.store.dispatch(new DeleteUserAction());
   }
 
   ngOnDestroy(): void {

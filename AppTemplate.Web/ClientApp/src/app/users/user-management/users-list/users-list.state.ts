@@ -2,13 +2,11 @@ import { State, Action, Selector, StateContext } from '@ngxs/store';
 import { UserModel } from '../user.model';
 import { UsersListService } from './users-list.service';
 import { tap } from 'rxjs/operators';
-import { produce } from 'immer';
 import { LoadUsersAction } from './users-list.actions';
 import { Injectable } from '@angular/core';
+import { ItemsLoadingState } from 'app/core/loading.state';
 
-export class UsersList {
-  items: UserModel[];
-  isLoading: boolean;
+export class UsersList extends ItemsLoadingState<UserModel> {
   totalCount: number;
 }
 
@@ -42,17 +40,18 @@ export class UsersListState {
 
   @Action(LoadUsersAction)
   loadUsers(ctx: StateContext<UsersList>, action: LoadUsersAction) {
-    ctx.setState(produce(ctx.getState(), draft => {
-      draft.isLoading = true;
-    }));
+    ctx.setState({
+      isLoading: true,
+      totalCount: 0
+    });
 
     return this.service.search(action.query)
       .pipe(tap(r => {
-        ctx.setState(produce(ctx.getState(), draft => {
-          draft.isLoading = false;
-          draft.items = r.items;
-          draft.totalCount = r.totalCount;
-        }));
+        ctx.setState({
+          isLoading: false,
+          items: r.items,
+          totalCount: r.totalCount
+        })
       }));
   }
 }

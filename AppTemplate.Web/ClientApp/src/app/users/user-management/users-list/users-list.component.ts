@@ -5,6 +5,9 @@ import { MatTable } from '@angular/material/table';
 import { UsersListDataSource } from './users-list-datasource';
 import { UserModel } from '../user.model';
 import { Store } from '@ngxs/store';
+import { UsersListState } from './users-list.state';
+import { Observable, timer } from 'rxjs';
+import { debounce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-users-list',
@@ -17,10 +20,13 @@ export class UsersListComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<UserModel>;
   dataSource: UsersListDataSource;
 
+  isLoading$: Observable<boolean>;
+
   displayedColumns = ['id', 'username', 'fullName', 'email'];
 
   constructor(private store: Store) {
-
+    this.isLoading$ = this.store.select(UsersListState.isLoading)
+      .pipe(debounce(v=> timer(v? 300 : 0)));
   }
 
   ngOnInit() {
@@ -31,6 +37,7 @@ export class UsersListComponent implements AfterViewInit, OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
-    this.dataSource.load();
+
+    window.setTimeout(() => this.dataSource.load());
   }
 }

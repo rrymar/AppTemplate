@@ -29,6 +29,10 @@
   </div>
   <div>
     <button mat-button type="submit">Save</button>
+    <button mat-button (click)="delete()" type="button">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
     <button mat-button routerLink="./">Cancel</button>
   </div>
 </form>
