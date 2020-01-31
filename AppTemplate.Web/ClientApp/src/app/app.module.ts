@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomRouteReuseStrategy } from './core/custom-route-reuse-strategy';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { CoreModule } from './core/core.module';
+import { GlobalErrorsHandler } from './core/errors/global-errors-handler';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,17 @@ import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    UsersModule
+    UsersModule,
+    CoreModule
   ],
   providers: [
     {
     provide: RouteReuseStrategy,
     useClass: CustomRouteReuseStrategy
+    },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorsHandler
     }
   ],
   bootstrap: [AppComponent]

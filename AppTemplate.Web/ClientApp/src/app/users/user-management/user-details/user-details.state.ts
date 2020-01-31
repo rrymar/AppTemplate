@@ -53,7 +53,7 @@ export class UserDetailsState {
   deleteUser(ctx: StateContext<EntityLoadingState<UserModel>>, action: DeleteUserAction) {
     var user = ctx.getState().entity;
 
-    ctx.setState({ isLoading: true });
+    ctx.patchState({ isLoading: true });
 
     return this.service.delete(user.id).pipe(
       tap(() => this.updateEntity(null, ctx), () => this.onError(ctx)),

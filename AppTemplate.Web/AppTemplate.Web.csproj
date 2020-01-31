@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\core\core.module.ts" />
+    <None Remove="ClientApp\src\app\core\errors\errors.service.ts" />
+    <None Remove="ClientApp\src\app\core\errors\server-error.model.ts" />
+    <None Remove="ClientApp\src\app\core\errors\ui-error.ts" />
     <None Remove="ClientApp\src\app\users\user-management\user.model.ts" />
     <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
     <None Remove="ClientApp\src\app\users\user-management\users-list\users-list.state.ts" />
@@ -51,6 +55,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\errors\errors.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\errors\server-error.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\errors\ui-error.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\users\user-management\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.state.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\users\user-management\users-list\users-list.service.ts" />
