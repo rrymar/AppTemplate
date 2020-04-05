@@ -21,5 +21,7 @@ namespace AppTemplate.Users.UserManagement
 
         public bool IsSystemUser { get; set; }
 
+        public DateTime CreatedOn { get; set; }
+
     }
 }

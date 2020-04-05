@@ -22,7 +22,7 @@ export class UsersListComponent implements AfterViewInit, OnInit {
 
   isLoading$: Observable<boolean>;
 
-  displayedColumns = ['id', 'username', 'fullName', 'email'];
+  displayedColumns = ['id', 'username', 'fullName', 'createdOn', 'email'];
 
   constructor(private store: Store) {
     this.isLoading$ = this.store.select(UsersListState.isLoading)
