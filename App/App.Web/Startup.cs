@@ -10,6 +10,7 @@ using Core.Web.Errors;
 using Microsoft.EntityFrameworkCore;
 using Users;
 using App.Database;
+using Core.Authentication;
 
 namespace App.Web
 {
@@ -35,6 +36,7 @@ namespace App.Web
 
             var mvcBuilder = services.AddControllers();
 
+            services.RegisterModule<CoreAuthenticationModule>();
             services.RegisterTopLevelModule<UsersModule>(mvcBuilder, Configuration);
 
             var apiInfo = new OpenApiInfo { Title = "App", Version = "v1" };

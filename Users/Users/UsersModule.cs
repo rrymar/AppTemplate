@@ -3,7 +3,6 @@ using Core.Web.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Users.Authentication;
 using Users.Database;
 using Users.UserManagement;
 
@@ -16,7 +15,6 @@ namespace Users
             var connectionString = configuration.GetConnectionString("Database");
             services.AddDbContext<UsersDataContext>(o => o.UseSqlServer(connectionString));
 
-            services.AddScoped<ICurrentUserLocator, CurrentUserLocator>();
             services.RegisterModule<UserManagementModule>();
         }
     }
