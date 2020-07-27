@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace AppTemplate.Users.Database
+namespace Core.Database
 {
     public class Role
     {

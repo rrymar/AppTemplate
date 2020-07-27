@@ -1,4 +1,4 @@
-﻿namespace AppTemplate.Database
+﻿namespace Core.Database
 {
     public interface ICurrentUserLocator
     {

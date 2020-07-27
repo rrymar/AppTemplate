@@ -1,16 +1,16 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Users.Database;
+﻿using AppTemplate.Users.Database;
+using Core.Database;
 using System.Linq;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {
     public class CreateUserHandler
     {
-        private readonly DataContext dataContext;
+        private readonly UsersDataContext dataContext;
 
         private readonly UserMapper mapper;
 
-        public CreateUserHandler(DataContext dataContext, UserMapper mapper)
+        public CreateUserHandler(UsersDataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
             this.mapper = mapper;

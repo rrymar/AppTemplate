@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace AppTemplate.Database.Extensions
+namespace Core.Database.Extensions
 {
     public class Changes<TEntity, TModel>
     {

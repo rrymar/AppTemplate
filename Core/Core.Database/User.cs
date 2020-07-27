@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Core.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace AppTemplate.Users.Database
+namespace Core.Database
 {
     public class User : AuditEntity
     {

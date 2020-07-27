@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AppTemplate.Users.Database
+namespace Core.Database
 {
     public class UserRole
     {

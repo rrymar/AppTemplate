@@ -1,7 +1,7 @@
 ﻿using Core.Database;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AppTemplate.Users.Database
+namespace Core.Database
 {
     public class FullAuditEntity : AuditEntity
     {

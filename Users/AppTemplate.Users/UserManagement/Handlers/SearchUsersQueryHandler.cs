@@ -1,7 +1,6 @@
-﻿using AppTemplate.Database;
+﻿using AppTemplate.Users.Database;
 using Core.Web.Crud;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading;
 
@@ -9,11 +8,11 @@ namespace AppTemplate.Users.UserManagement.Handlers
 {
     public class SearchUsersQueryHandler
     {
-        private readonly DataContext dataContext;
+        private readonly UsersDataContext dataContext;
 
         private readonly UserMapper mapper;
 
-        public SearchUsersQueryHandler(DataContext dataContext, UserMapper mapper)
+        public SearchUsersQueryHandler(UsersDataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
             this.mapper = mapper;

@@ -1,14 +1,12 @@
-﻿using AppTemplate.Database.Extensions;
-using AppTemplate.Users.Database;
-using Core.Database;
+﻿using Core.Database.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AppTemplate.Database
+namespace Core.Database
 {
-    public class DataContext : DbContext
+    public class CoreDataContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 
@@ -18,8 +16,8 @@ namespace AppTemplate.Database
 
         private readonly ICurrentUserLocator currentUserLocator;
 
-        public DataContext(DbContextOptions<DataContext> options, ICurrentUserLocator currentUserLocator)
-         : base(options)
+        public CoreDataContext(DbContextOptions options, ICurrentUserLocator currentUserLocator)
+            : base(options)
         {
             this.currentUserLocator = currentUserLocator;
         }
@@ -28,7 +26,6 @@ namespace AppTemplate.Database
         {
             modelBuilder.ApplyConventions();
             User.OnModelCreating(modelBuilder);
-
             base.OnModelCreating(modelBuilder);
         }
 

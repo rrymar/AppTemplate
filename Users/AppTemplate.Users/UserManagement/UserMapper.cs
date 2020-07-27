@@ -1,4 +1,4 @@
-﻿using AppTemplate.Users.Database;
+﻿using Core.Database;
 using Core.Web.Crud;
 using System.Linq;
 

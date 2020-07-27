@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AppTemplate.Database.Extensions
+namespace Core.Database.Extensions
 {
     public static class DbContextModelExtensions
     {

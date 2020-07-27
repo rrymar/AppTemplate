@@ -1,5 +1,5 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Users.Database;
+﻿using AppTemplate.Users.Database;
+using Core.Database;
 using Core.Web.Errors;
 using System.Linq;
 
@@ -7,9 +7,9 @@ namespace AppTemplate.Users.UserManagement.Handlers
 {
     public class DeleteUserHandler
     {
-        private readonly DataContext dataContext;
+        private readonly UsersDataContext dataContext;
 
-        public DeleteUserHandler(DataContext dataContext)
+        public DeleteUserHandler(UsersDataContext dataContext)
         {
             this.dataContext = dataContext;
         }
