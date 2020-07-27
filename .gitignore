@@ -242,3 +242,4 @@ _Pvt_Extensions
 /AppTemplate.Database.Migrations/MigrationsScript.sql
 /AppTemplate.Web/.config/dotnet-tools.json
 /AppTemplate.Web/appsettings.QA.json
+/App/AppTemplate.Database.Migrations/MigrationsScript.sql
