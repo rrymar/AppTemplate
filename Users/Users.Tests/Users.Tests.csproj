@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\App\AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj" />
-    <ProjectReference Include="..\..\App\AppTemplate.Web\AppTemplate.Web.csproj" />
+    <ProjectReference Include="..\..\App\App.Database.Migrations\App.Database.Migrations.csproj" />
+    <ProjectReference Include="..\..\App\App.Web\App.Web.csproj" />
     <ProjectReference Include="..\Users.TestServices\Users.TestServices.csproj" />
   </ItemGroup>
 

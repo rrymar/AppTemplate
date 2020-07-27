@@ -52,7 +52,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Users\Users\Users.csproj" />
-    <ProjectReference Include="..\AppTemplate.Database\AppTemplate.Database.csproj" />
+    <ProjectReference Include="..\App.Database\App.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
