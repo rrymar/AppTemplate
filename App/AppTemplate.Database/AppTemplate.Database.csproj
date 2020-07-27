@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Users\AppTemplate.Users.Database\AppTemplate.Users.Database.csproj" />
+    <ProjectReference Include="..\..\Users\Users.Database\Users.Database.csproj" />
   </ItemGroup>
 
 </Project>

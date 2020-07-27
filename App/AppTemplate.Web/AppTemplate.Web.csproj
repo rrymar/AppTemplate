@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Users\AppTemplate.Users\AppTemplate.Users.csproj" />
+    <ProjectReference Include="..\..\Users\Users\Users.csproj" />
     <ProjectReference Include="..\AppTemplate.Database\AppTemplate.Database.csproj" />
   </ItemGroup>
 
