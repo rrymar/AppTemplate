@@ -1,8 +1,8 @@
 ﻿using AppTemplate.Database;
 using AppTemplate.UserManagement.Authentication;
 using AppTemplate.Users.UserManagement;
+using Core.Web.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using WebCore.DependencyInjection;
 
 namespace AppTemplate.Users
 {

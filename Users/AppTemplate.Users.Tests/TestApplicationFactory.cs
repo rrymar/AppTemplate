@@ -4,9 +4,9 @@ using AppTemplate.Users.TestServices;
 using AppTemplate.Web;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
-using TestsCore.Database;
-using WebCore.DependencyInjection;
 using AppTemplate.Users.TestServices.TestMigrations;
+using Core.Tests.Database;
+using Core.Web.DependencyInjection;
 
 namespace AppTemplate.Users.Tests
 {

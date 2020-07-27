@@ -1,7 +1,7 @@
 ﻿using AppTemplate.Database;
+using Core.Web.Errors;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Web.Core.Errors;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {

@@ -1,6 +1,6 @@
 ﻿using AppTemplate.Users.UserManagement.Handlers;
+using Core.Web.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using WebCore.DependencyInjection;
 
 namespace AppTemplate.Users.UserManagement
 {

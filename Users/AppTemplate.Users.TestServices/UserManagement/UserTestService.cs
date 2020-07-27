@@ -1,5 +1,5 @@
 ﻿using AppTemplate.Users.UserManagement;
-using TestsCore;
+using Core.Tests;
 
 namespace AppTemplate.Users.TestServices.UserManagement
 {
@@ -9,7 +9,7 @@ namespace AppTemplate.Users.TestServices.UserManagement
 
     public class UserTestService : CrudTestService<UserModel>, IUserTestService
     {
-        public UserTestService(WebCore.WebClient.RestClient client) : base(client)
+        public UserTestService(Core.Web.WebClient.RestClient client) : base(client)
         {
         }
 

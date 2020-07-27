@@ -1,5 +1,5 @@
 ﻿using AppTemplate.Database;
-using AppTemplate.Database.Users;
+using AppTemplate.Users.Database;
 
 namespace AppTemplate.UserManagement.Authentication
 {

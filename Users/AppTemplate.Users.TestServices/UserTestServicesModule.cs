@@ -1,6 +1,6 @@
 ﻿using AppTemplate.Users.TestServices.UserManagement;
+using Core.Web.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using WebCore.DependencyInjection;
 
 namespace AppTemplate.Users.TestServices
 {

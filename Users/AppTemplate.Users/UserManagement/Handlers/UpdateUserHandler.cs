@@ -1,6 +1,6 @@
 ﻿using AppTemplate.Database;
-using Web.Core.Errors;
 using AppTemplate.Database.Extensions;
+using Core.Web.Errors;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {

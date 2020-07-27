@@ -1,5 +1,5 @@
 ﻿using AppTemplate.Database;
-using AppTemplate.Database.Users;
+using AppTemplate.Users.Database;
 using System.Linq;
 
 namespace AppTemplate.Users.UserManagement.Handlers

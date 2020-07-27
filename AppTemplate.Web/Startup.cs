@@ -6,10 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using WebCore.DependencyInjection;
 using AppTemplate.Users;
-using WebCore.Errors;
 using Microsoft.OpenApi.Models;
+using Core.Web.DependencyInjection;
+using Core.Web.Errors;
 
 namespace AppTemplate.Web
 {

@@ -1,9 +1,9 @@
 ﻿using AppTemplate.Database;
 using AppTemplate.Web;
+using Core.Tests.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using TestsCore.Database;
 
 namespace AppTemplate.InterationTesting
 {

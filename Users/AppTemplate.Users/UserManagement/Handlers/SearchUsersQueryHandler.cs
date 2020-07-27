@@ -1,9 +1,9 @@
 ﻿using AppTemplate.Database;
+using Core.Web.Crud;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading;
-using WebCore.Crud;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {

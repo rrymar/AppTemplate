@@ -1,7 +1,7 @@
 ﻿using AppTemplate.Users.TestServices.UserManagement;
+using Core.Web.Crud;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using WebCore.Crud;
 using Xunit;
 
 namespace AppTemplate.Users.Tests.UserManagement

@@ -1,6 +1,6 @@
 ﻿using AppTemplate.Users.UserManagement;
-using WebCore.Crud;
-using WebCore.WebClient;
+using Core.Web.Crud;
+using Core.Web.WebClient;
 
 namespace AppTemplate.Users.TestServices.UserManagement
 {

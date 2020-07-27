@@ -1,6 +1,6 @@
-﻿using AppTemplate.Database.Core;
-using AppTemplate.Database.Extensions;
-using AppTemplate.Database.Users;
+﻿using AppTemplate.Database.Extensions;
+using AppTemplate.Users.Database;
+using Core.Database;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;

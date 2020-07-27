@@ -1,4 +1,7 @@
 ﻿using AppTemplate.Database.Migrations;
+using Core.Tests;
+using Core.Tests.Database;
+using Core.Web.WebClient;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -7,9 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.IO;
-using TestsCore;
-using TestsCore.Database;
-using WebCore.WebClient;
 
 namespace AppTemplate.InterationTesting
 {

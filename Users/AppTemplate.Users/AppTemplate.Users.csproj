@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\AppTemplate.Database\AppTemplate.Database.csproj" />
-    <ProjectReference Include="..\..\WebCore\WebCore.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Web\Core.Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Tests\Core.Tests.csproj" />
     <ProjectReference Include="..\..\TestsCore\TestsCore.csproj" />
     <ProjectReference Include="..\..\WebCore\WebCore.csproj" />
     <ProjectReference Include="..\AppTemplate.Users\AppTemplate.Users.csproj" />

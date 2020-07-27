@@ -1,4 +1,4 @@
-﻿using AppTemplate.Database.Core;
+﻿using Core.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;

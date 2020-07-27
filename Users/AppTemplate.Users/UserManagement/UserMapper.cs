@@ -1,6 +1,6 @@
-﻿using AppTemplate.Database.Users;
+﻿using AppTemplate.Users.Database;
+using Core.Web.Crud;
 using System.Linq;
-using WebCore.Crud;
 
 namespace AppTemplate.Users.UserManagement
 {
