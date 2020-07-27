@@ -1,24 +1,23 @@
 ﻿using Core.Web.Crud;
 using Microsoft.AspNetCore.Mvc;
-using Users.UserManagement.Handlers;
 
-namespace Users.UserManagement
+namespace Users.UserManagement.Search
 {
     [ApiController]
     [Route(UsersRoutes.SearchUsers)]
     public class SearchUsersController : ControllerBase
     {
-        private readonly SearchUsersQueryHandler handler;
+        private readonly SearchUsersService service;
         
-        public SearchUsersController(SearchUsersQueryHandler handler)
+        public SearchUsersController(SearchUsersService service)
         {
-            this.handler = handler;
+            this.service = service;
         }
 
         [HttpPost]
         public ResultsList<UserModel> Post([FromBody] SearchQuery query)
         {
-            return handler.Handle(query);
+            return service.Search(query);
         }
     }
 }

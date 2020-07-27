@@ -1,28 +1,24 @@
 ﻿using Core.Web.Crud;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Threading;
 using Users.Database;
 
-namespace Users.UserManagement.Handlers
+namespace Users.UserManagement.Search
 {
-    public class SearchUsersQueryHandler
+    public class SearchUsersService
     {
         private readonly UsersDataContext dataContext;
 
         private readonly UserMapper mapper;
 
-        public SearchUsersQueryHandler(UsersDataContext dataContext, UserMapper mapper)
+        public SearchUsersService(UsersDataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
             this.mapper = mapper;
         }
 
-        internal ResultsList<UserModel> Handle(SearchQuery query)
+        public ResultsList<UserModel> Search(SearchQuery query)
         {
-            if(query.IsDesc)
-                Thread.Sleep(2000); // loader testing
-
             var queryable = dataContext.Users.Where(e => e.IsActive);
             if (!string.IsNullOrWhiteSpace(query.Keyword))
                 queryable.Where(e => EF.Functions.Like(e.FullName, query.Keyword + "%"));
