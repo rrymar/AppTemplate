@@ -1,6 +1,6 @@
-﻿using AppTemplate.Users.UserManagement.Handlers;
-using Core.Web.Crud;
+﻿using Core.Web.Crud;
 using Microsoft.AspNetCore.Mvc;
+using Users.UserManagement.Handlers;
 
 namespace Users.UserManagement
 {

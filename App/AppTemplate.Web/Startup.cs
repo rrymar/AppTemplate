@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AppTemplate.Users;
 using Microsoft.OpenApi.Models;
 using Core.Web.DependencyInjection;
 using Core.Web.Errors;
 using AppTemplate.Database;
 using Microsoft.EntityFrameworkCore;
+using Users;
 
 namespace AppTemplate.Web
 {

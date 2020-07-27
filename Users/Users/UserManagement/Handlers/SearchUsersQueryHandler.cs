@@ -1,8 +1,8 @@
-﻿using AppTemplate.Users.Database;
-using Core.Web.Crud;
+﻿using Core.Web.Crud;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
+using Users.Database;
 
 namespace Users.UserManagement.Handlers
 {

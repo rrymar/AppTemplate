@@ -1,11 +1,10 @@
-﻿using AppTemplate.Users.Database;
-using AppTemplate.Users.TestServices.TestMigrations;
-using AppTemplate.Users.TestServices.UserManagement;
-using AppTemplate.Users.UserManagement;
-using Core.Database;
+﻿using Core.Database;
 using Core.Tests.Assertion;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
+using Users.TestServices.TestMigrations;
+using Users.TestServices.UserManagement;
+using Users.UserManagement;
 using Xunit;
 
 namespace Users.Tests.UserManagement

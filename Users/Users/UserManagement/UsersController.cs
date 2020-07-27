@@ -1,5 +1,5 @@
-﻿using AppTemplate.Users.UserManagement.Handlers;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Users.UserManagement.Handlers;
 
 namespace Users.UserManagement
 {

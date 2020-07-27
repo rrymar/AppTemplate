@@ -1,7 +1,7 @@
-﻿using AppTemplate.Users.Database;
-using Core.Database;
+﻿using Core.Database;
 using Core.Web.Errors;
 using System.Linq;
+using Users.Database;
 
 namespace Users.UserManagement.Handlers
 {

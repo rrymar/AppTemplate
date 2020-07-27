@@ -1,6 +1,6 @@
-﻿using AppTemplate.Users.Database;
-using Core.Database;
+﻿using Core.Database;
 using System.Linq;
+using Users.Database;
 
 namespace Users.UserManagement.Handlers
 {

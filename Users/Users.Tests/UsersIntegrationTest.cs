@@ -1,7 +1,7 @@
 ﻿using AppTemplate.Database.Migrations;
-using AppTemplate.Users.Database;
 using AppTemplate.Web;
 using Core.Tests;
+using Users.Database;
 using Xunit;
 
 namespace Users.Tests

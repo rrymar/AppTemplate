@@ -1,6 +1,4 @@
-﻿
-using AppTemplate.Users.Database;
-using Core.Database;
+﻿using Core.Database;
 
 namespace Users.TestServices.TestMigrations
 {

@@ -1,11 +1,11 @@
-﻿using AppTemplate.UserManagement.Authentication;
-using AppTemplate.Users.Database;
-using AppTemplate.Users.UserManagement;
-using Core.Database;
+﻿using Core.Database;
 using Core.Web.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Users.Authentication;
+using Users.Database;
+using Users.UserManagement;
 
 namespace Users
 {
