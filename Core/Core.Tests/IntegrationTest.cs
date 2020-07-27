@@ -1,25 +1,17 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Web;
-using Core.Tests.Database;
+﻿using Core.Tests.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace AppTemplate.InterationTesting
+namespace Core.Tests
 {
-    public abstract class IntegrationTest : IntegrationTest<DataContext, Startup>
-    {
-        protected IntegrationTest(TestApplicationFactory<DataContext, Startup> factory) : base(factory)
-        {
-        }
-    }
 
     [AutoRollback]
-    public abstract class IntegrationTest<TDbContex, TStartup>
-    where TDbContex : DbContext
-    where TStartup : class
+    public abstract class IntegrationTest<TDbContex, TStartup, TMigrationScripts>
+        where TDbContex : DbContext
+        where TStartup : class
     {
-        private readonly TestApplicationFactory<TDbContex, TStartup> factory;
+        private readonly TestApplicationFactory<TDbContex, TStartup, TMigrationScripts> factory;
 
         protected virtual bool CreateTransaction => false;
 
@@ -29,7 +21,7 @@ namespace AppTemplate.InterationTesting
 
         private readonly IServiceScope scope;
 
-        protected IntegrationTest(TestApplicationFactory<TDbContex, TStartup> factory)
+        protected IntegrationTest(TestApplicationFactory<TDbContex, TStartup, TMigrationScripts> factory)
         {
             this.factory = factory;
             factory.Server.PreserveExecutionContext = true;

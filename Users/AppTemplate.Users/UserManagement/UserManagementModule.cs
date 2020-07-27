@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AppTemplate.Users.UserManagement
 {
-    public class UserManagementModule : DiModule
+    public class UserManagementModule : IModule
     {
         public override void Register(IServiceCollection services)
         {

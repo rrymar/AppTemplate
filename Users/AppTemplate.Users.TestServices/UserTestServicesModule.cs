@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AppTemplate.Users.TestServices
 {
-    public class UserTestServicesModule : DiModule
+    public class UserTestServicesModule : IModule
     {
         public override void Register(IServiceCollection services)
         {

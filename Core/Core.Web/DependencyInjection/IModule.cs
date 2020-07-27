@@ -2,8 +2,8 @@
 
 namespace Core.Web.DependencyInjection
 {
-    public abstract class DiModule
+    public interface IModule
     {
-        public abstract void Register(IServiceCollection services);
+        void Register(IServiceCollection services);
     }
 }

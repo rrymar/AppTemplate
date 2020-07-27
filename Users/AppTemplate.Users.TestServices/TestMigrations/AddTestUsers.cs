@@ -1,14 +1,14 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Users.Database;
+﻿using AppTemplate.Users.Database;
+using Core.Database;
 using Core.Tests.Database;
 
 namespace AppTemplate.Users.TestServices.TestMigrations
 {
-    public class AddTestUsers : ITestMigration<DataContext>
+    public class AddTestUsers : ITestMigration<UsersDataContext>
     {
         public string Name => "202001201015_AddTestUsers";
 
-        public void Execute(DataContext context)
+        public void Execute(UsersDataContext context)
         {
             var user = new User()
             {

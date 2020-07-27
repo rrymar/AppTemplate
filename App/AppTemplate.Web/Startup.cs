@@ -1,11 +1,9 @@
-using AppTemplate.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
 using AppTemplate.Users;
 using Microsoft.OpenApi.Models;
 using Core.Web.DependencyInjection;
@@ -24,25 +22,16 @@ namespace AppTemplate.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration.GetConnectionString("Database");
-            services.AddDbContext<DataContext>(o => o.UseSqlServer(connectionString));
-
             services.AddApplicationInsightsTelemetry();
 
-            services.AddControllers()
-               .AddApplicationPart(typeof(UsersModule).Assembly);
+            var mvcBuilder = services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AppTemplate", Version = "v1" });
-            });
+            services.RegisterTopLevelModule<UsersModule>(mvcBuilder, Configuration);
 
-            services.RegisterModule<UsersModule>();
+            var apiInfo = new OpenApiInfo { Title = "AppTemplate", Version = "v1" };
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1", apiInfo));
 
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -70,9 +59,7 @@ namespace AppTemplate.Web
                 spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
-                {
                     spa.UseAngularCliServer(npmScript: "start");
-                }
             });
         }
     }

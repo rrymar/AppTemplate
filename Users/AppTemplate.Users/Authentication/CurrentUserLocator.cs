@@ -1,5 +1,4 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Users.Database;
+﻿using Core.Database;
 
 namespace AppTemplate.UserManagement.Authentication
 {

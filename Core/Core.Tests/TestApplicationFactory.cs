@@ -1,6 +1,4 @@
-﻿using AppTemplate.Database.Migrations;
-using Core.Tests;
-using Core.Tests.Database;
+﻿using Core.Tests.Database;
 using Core.Web.WebClient;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -11,9 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.IO;
 
-namespace AppTemplate.InterationTesting
+namespace Core.Tests
 {
-    public class TestApplicationFactory<TDbContex, TStartup> : WebApplicationFactory<TStartup>
+    public class TestApplicationFactory<TDbContex, TStartup, TMigrationScripts> : WebApplicationFactory<TStartup>
         where TDbContex : DbContext
         where TStartup : class
     {
@@ -38,7 +36,7 @@ namespace AppTemplate.InterationTesting
             {
                 var provider = s.BuildServiceProvider();
                 var db = provider.GetRequiredService<TDbContex>();
-                db.InitTestDatabases(typeof(MigrationScripts).Assembly, TestMigrations);
+                db.InitTestDatabases(typeof(TMigrationScripts).Assembly, TestMigrations);
                 provider.Dispose();
 
                 ConfigureTestServices(s);

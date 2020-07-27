@@ -1,16 +1,16 @@
-﻿using AppTemplate.Database;
-using AppTemplate.Database.Extensions;
+﻿using AppTemplate.Users.Database;
 using Core.Web.Errors;
+using Core.Database.Extensions;
 
 namespace AppTemplate.Users.UserManagement.Handlers
 {
     public class UpdateUserHandler
     {
-        private readonly DataContext dataContext;
+        private readonly UsersDataContext dataContext;
 
         private readonly UserMapper mapper;
 
-        public UpdateUserHandler(DataContext dataContext, UserMapper mapper)
+        public UpdateUserHandler(UsersDataContext dataContext, UserMapper mapper)
         {
             this.dataContext = dataContext;
             this.mapper = mapper;
