@@ -1,5 +1,4 @@
-﻿using Core.Database;
-using Core.Web.DependencyInjection;
+﻿using Core.Web.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

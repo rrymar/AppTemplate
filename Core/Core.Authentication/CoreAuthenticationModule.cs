@@ -1,4 +1,5 @@
-﻿using Core.Web.DependencyInjection;
+﻿using Core.Database;
+using Core.Web.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.Authentication
@@ -8,6 +9,7 @@ namespace Core.Authentication
         public void Register(IServiceCollection services)
         {
             services.AddScoped<IUserContext, UserContext>();
+            services.AddScoped<ICurrentUserLocator, UserContext>();
         }
     }
 }

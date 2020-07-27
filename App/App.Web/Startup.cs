@@ -32,8 +32,7 @@ namespace App.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationInsightsTelemetry();
-
-
+            
             var mvcBuilder = services.AddControllers();
 
             services.RegisterModule<CoreAuthenticationModule>();
