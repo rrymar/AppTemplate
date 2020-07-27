@@ -37,7 +37,7 @@ namespace App.Web
 
             services.RegisterTopLevelModule<UsersModule>(mvcBuilder, Configuration);
 
-            var apiInfo = new OpenApiInfo { Title = "AppTemplate", Version = "v1" };
+            var apiInfo = new OpenApiInfo { Title = "App", Version = "v1" };
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", apiInfo));
 
             services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
@@ -46,7 +46,7 @@ namespace App.Web
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppTemplate API V1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "App API V1"));
 
             if (!env.IsDevelopment())
                 app.UseHsts();

@@ -1,4 +1,4 @@
-# AppTemplate
+# App
 
 Install grobal EF tool
 

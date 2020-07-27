@@ -12,9 +12,4 @@
     <ProjectReference Include="..\..\Core\Core.Web\Core.Web.csproj" />
     <ProjectReference Include="..\Users.Database\Users.Database.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Authentication\" />
-  </ItemGroup>
-
 </Project>
