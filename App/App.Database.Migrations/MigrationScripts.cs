@@ -1,4 +1,4 @@
-﻿namespace AppTemplate.Database.Migrations
+﻿namespace App.Database.Migrations
 {
     public class MigrationScripts
     {

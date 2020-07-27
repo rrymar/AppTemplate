@@ -1,5 +1,5 @@
-﻿using AppTemplate.Database.Migrations;
-using AppTemplate.Web;
+﻿using App.Database.Migrations;
+using App.Web;
 using Core.Tests;
 using Users.Database;
 using Xunit;

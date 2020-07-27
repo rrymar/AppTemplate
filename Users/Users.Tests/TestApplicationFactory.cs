@@ -1,13 +1,13 @@
-﻿using AppTemplate.Web;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using Core.Tests.Database;
 using Core.Web.DependencyInjection;
 using Core.Tests;
-using AppTemplate.Database.Migrations;
 using Users.Database;
 using Users.TestServices.TestMigrations;
 using Users.TestServices;
+using App.Database.Migrations;
+using App.Web;
 
 namespace Users.Tests
 {

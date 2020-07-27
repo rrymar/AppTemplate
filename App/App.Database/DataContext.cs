@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Users.Database;
 
-namespace AppTemplate.Database
+namespace App.Database
 {
     public class DataContext : CoreDataContext
     {

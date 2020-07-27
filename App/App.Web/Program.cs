@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace AppTemplate.Web
+namespace App.Web
 {
     public static class Program
     {

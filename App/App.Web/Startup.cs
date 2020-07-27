@@ -7,11 +7,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Core.Web.DependencyInjection;
 using Core.Web.Errors;
-using AppTemplate.Database;
 using Microsoft.EntityFrameworkCore;
 using Users;
+using App.Database;
 
-namespace AppTemplate.Web
+namespace App.Web
 {
     public class Startup
     {
