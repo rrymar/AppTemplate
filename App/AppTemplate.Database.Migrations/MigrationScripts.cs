@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AppTemplate.Database.Migrations
+﻿namespace AppTemplate.Database.Migrations
 {
-    public static class MigrationScripts
+    public class MigrationScripts
     {
     }
 }

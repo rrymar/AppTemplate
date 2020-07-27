@@ -2,6 +2,7 @@
 using AppTemplate.Users.TestServices.TestMigrations;
 using AppTemplate.Users.TestServices.UserManagement;
 using AppTemplate.Users.UserManagement;
+using Core.Database;
 using Core.Tests.Assertion;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;

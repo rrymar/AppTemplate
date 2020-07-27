@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="appsettings.json">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -30,12 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\App\AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj" />
+    <ProjectReference Include="..\..\App\AppTemplate.Web\AppTemplate.Web.csproj" />
     <ProjectReference Include="..\AppTemplate.Users.TestServices\AppTemplate.Users.TestServices.csproj" />
     <ProjectReference Include="..\AppTemplate.Users\AppTemplate.Users.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

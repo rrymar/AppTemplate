@@ -6,7 +6,7 @@ namespace AppTemplate.Users.TestServices
 {
     public class UserTestServicesModule : IModule
     {
-        public override void Register(IServiceCollection services)
+        public void Register(IServiceCollection services)
         {
             services.AddTransient<IUserTestService, UserTestService>();
             services.AddTransient<SearchUsersTestService>();
