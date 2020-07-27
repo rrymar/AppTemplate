@@ -22,11 +22,16 @@ namespace AppTemplate.Web
 
         public IConfiguration Configuration { get; }
 
+        public void ConfigureMigrationServices(IServiceCollection services)
+        {
+            services.AddDbContext<DataContext>(o => o.UseSqlServer("Server=.;Database=dummy"));
+            ConfigureServices(services);
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationInsightsTelemetry();
 
-            services.AddDbContext<DataContext>(o => o.UseSqlServer("Server=.;Database=dummy"));
 
             var mvcBuilder = services.AddControllers();
 
