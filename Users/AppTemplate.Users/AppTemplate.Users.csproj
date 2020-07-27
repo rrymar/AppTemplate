@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AppTemplate.Database\AppTemplate.Database.csproj" />
     <ProjectReference Include="..\..\Core\Core.Web\Core.Web.csproj" />
   </ItemGroup>
 

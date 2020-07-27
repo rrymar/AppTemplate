@@ -15,8 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppTemplate.Database.Migrations\AppTemplate.Database.Migrations.csproj" />
-    <ProjectReference Include="..\AppTemplate.Database\AppTemplate.Database.csproj" />
     <ProjectReference Include="..\AppTemplate.Web\AppTemplate.Web.csproj" />
     <ProjectReference Include="..\Core\Core.Tests\Core.Tests.csproj" />
     <ProjectReference Include="..\Core\Core.Web\Core.Web.csproj" />
