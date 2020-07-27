@@ -8,6 +8,8 @@ using AppTemplate.Users;
 using Microsoft.OpenApi.Models;
 using Core.Web.DependencyInjection;
 using Core.Web.Errors;
+using AppTemplate.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppTemplate.Web
 {
@@ -23,6 +25,8 @@ namespace AppTemplate.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationInsightsTelemetry();
+
+            services.AddDbContext<DataContext>(o => o.UseSqlServer("Server=.;Database=dummy"));
 
             var mvcBuilder = services.AddControllers();
 

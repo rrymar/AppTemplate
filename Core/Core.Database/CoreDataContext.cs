@@ -16,6 +16,11 @@ namespace Core.Database
 
         private readonly ICurrentUserLocator currentUserLocator;
 
+        protected CoreDataContext()
+        {
+
+        }
+
         public CoreDataContext(DbContextOptions options, ICurrentUserLocator currentUserLocator)
             : base(options)
         {

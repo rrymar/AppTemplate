@@ -15,11 +15,31 @@ namespace AppTemplate.Database.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AppTemplate.Database.Users.Role", b =>
+            modelBuilder.Entity("AppTemplate.Users.Database.UserPreferense", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserPreferenses");
+                });
+
+            modelBuilder.Entity("Core.Database.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,7 +55,7 @@ namespace AppTemplate.Database.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("AppTemplate.Database.Users.User", b =>
+            modelBuilder.Entity("Core.Database.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +105,7 @@ namespace AppTemplate.Database.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("AppTemplate.Database.Users.UserRole", b =>
+            modelBuilder.Entity("Core.Database.UserRole", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -107,15 +127,24 @@ namespace AppTemplate.Database.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("AppTemplate.Database.Users.UserRole", b =>
+            modelBuilder.Entity("AppTemplate.Users.Database.UserPreferense", b =>
                 {
-                    b.HasOne("AppTemplate.Database.Users.Role", "Role")
+                    b.HasOne("Core.Database.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Core.Database.UserRole", b =>
+                {
+                    b.HasOne("Core.Database.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("AppTemplate.Database.Users.User", "User")
+                    b.HasOne("Core.Database.User", "User")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
