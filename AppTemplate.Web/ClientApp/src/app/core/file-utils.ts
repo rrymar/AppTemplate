@@ -1,5 +1,5 @@
 import { HttpResponse } from '@angular/common/http';
-import saveAs from 'file-saver';
+import  * as FileSaver from 'file-saver';
 
 const getFileNameFromContentDisposition = (response: HttpResponse<Blob>) => {
   const header = response.headers.get('Content-Disposition');
@@ -10,6 +10,6 @@ const getFileNameFromContentDisposition = (response: HttpResponse<Blob>) => {
 export const saveFile = (response: HttpResponse<Blob>, fileName?: string) =>
 {
   const file = fileName || getFileNameFromContentDisposition(response);
-  saveAs(response.body, file);
+  FileSaver.saveAs(response.body, file);
 }
 
